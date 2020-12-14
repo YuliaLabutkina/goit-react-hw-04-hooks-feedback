@@ -12,9 +12,19 @@ function App() {
 
   const addFeedback = event => {
     const name = event.target.textContent;
-    if (name === 'good') setGood(prevGood => prevGood + 1);
-    if (name === 'neutral') setNeutral(prevNeutral => prevNeutral + 1);
-    if (name === 'bad') setBad(prevBad => prevBad + 1);
+    switch (name) {
+      case 'good':
+        setGood(prevGood => prevGood + 1);
+        break;
+      case 'neutral':
+        setNeutral(prevNeutral => prevNeutral + 1);
+        break;
+      case 'bad':
+        setBad(prevBad => prevBad + 1);
+        break;
+      default:
+        break;
+    };
   };
 
   const countTotalFeedback = () => {
